@@ -1,0 +1,90 @@
+#coding:gbk
+"""
+第一个小项目：Rock-paper-scissors-lizard-Spock
+作者：土木一班王培鉴
+日期：2020年11月20日
+"""
+
+import random
+
+def name_to_number(name):                 #实现石头，史波克，蜥蜴，纸，剪刀输出为数字
+    if name=="石头":
+        return 0
+    elif name=="史波克":
+        return 1
+    elif name=="布":
+        return 2
+    elif name=="蜥蜴":
+        return 3
+    elif name=="剪刀":
+        return 4
+
+
+
+def number_to_name(number):                #实现数字分别输出为石头，史波克，蜥蜴，纸，剪刀
+    if number==0:
+        return "石头"
+    elif number==1:
+        return "史波克"
+    elif number==2:
+        return "布"
+    elif number==3:
+        return "蜥蜴"
+    elif number==4:
+        return "剪刀"
+
+
+def rpsls(player_choice):
+    print("您的选择为：" + str(player_choice))
+    player_choice_number = name_to_number(player_choice)
+    a = number_to_name(comp_number)  # 运用number_to_name函数将数字转化为汉字
+    print("电脑的选择为：" + str(a))
+    if comp_number == 0:  # 以下全部是判断语句，根据RPSLS规则判断胜负
+        if player_choice_number==3 or player_choice_number ==4:
+            print("机器赢了")
+        elif a == player_choice:
+            print("您和计算机出的一样呢")
+        else:
+            print("你赢了")
+    if comp_number == 1:
+        if player_choice_number==0 or player_choice_number ==4:
+            print("机器赢了")
+        elif a == player_choice:
+            print("您和计算机出的一样呢")
+        else:
+            print("你赢了")
+    if comp_number == 2:
+        if player_choice_number ==0 or player_choice_number ==1:
+            print("机器赢了")
+        elif a == player_choice:
+            print("您和计算机出的一样呢")
+        else:
+            print("你赢了")
+    if comp_number == 3:
+        if player_choice_number == 1 or player_choice ==2:
+            print("机器赢了")
+        elif a == player_choice:
+            print("您和计算机出的一样呢")
+        else:
+            print("你赢了")
+    if comp_number == 4:
+        if player_choice_number ==2 or player_choice_number ==3:
+            print("机器赢了")
+        elif a == player_choice:
+            print("您和计算机出的一样呢")
+        else:
+            print("你赢了")
+
+
+
+print("欢迎使用RPSLS游戏")
+print("----------------")
+player_choice=input("请输入您的选择：")
+comp_number=random.randrange(0,5)            #使计算机随机产生0~4，五个数字
+print("----------------")
+if player_choice=="石头"or player_choice=="史波克"or player_choice=="布"or player_choice=="蜥蜴"or player_choice=="剪刀":              #判断名称是否输入正确
+    print(rpsls(player_choice))
+else:
+    print("Error: No Correct Name")
+
+
